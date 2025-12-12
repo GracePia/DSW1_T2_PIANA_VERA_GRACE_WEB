@@ -1,21 +1,19 @@
 export interface Book {
-    id: string;
-    title: string;
-    author: string;
-    isbn: string;
-    stock: number;
-    createdAt: Date;
+  id: number;
+  title: string;
+  author: string;
+  isbn: string;
+  stock: number;
+  // createdAt?: Date; // opcional, si tu API no lo devuelve
 }
 
 export interface Loan {
-    id: string;
-    bookId: string;
-    studentName: string;
-    loanDate: Date;
-    returnDate: Date | null;
-    status: string;
-    createdAt: Date;
-    book: Book;
+  id: number;
+  bookId: number;
+  studentName: string;
+  status: 'Active' | 'Returned';
+  // loanDate?: Date; // opcional
+  // returnDate?: Date | null; // opcional
 }
 
 export interface CreateBookDTO {
@@ -24,7 +22,8 @@ export interface CreateBookDTO {
   isbn: string;
   stock: number;
 }
+
 export interface CreateLoanDTO {
-    bookId: string;
-    studentName: string;
+  bookId: number;
+  studentName: string;
 }

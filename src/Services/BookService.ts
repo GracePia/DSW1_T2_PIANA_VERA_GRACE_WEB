@@ -7,19 +7,22 @@ export const BookService = {
     return response.data;
   },
 
-  getById: async (id: string): Promise<Book> => {
+  getById: async (id: number): Promise<Book> => {
     const response = await api.get<Book>(`/books/${id}`);
     return response.data;
-  },    
-    create: async (bookData: CreateBookDTO): Promise<Book> => {
+  },
+
+  create: async (bookData: CreateBookDTO): Promise<Book> => {
     const response = await api.post<Book>("/books", bookData);
     return response.data;
   },
-    update: async (id: string, bookData: Partial<CreateBookDTO>): Promise<Book> => {
+
+  update: async (id: number, bookData: Partial<CreateBookDTO>): Promise<Book> => {
     const response = await api.put<Book>(`/books/${id}`, bookData);
     return response.data;
   },
-    delete: async (id: string): Promise<void> => {
+
+  delete: async (id: number): Promise<void> => {
     await api.delete<void>(`/books/${id}`);
   },
 };
