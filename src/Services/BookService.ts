@@ -1,5 +1,5 @@
 import api from "./api";
-import { Book, CreateBookDTO } from "../Models/BookModels";
+import type { Book, CreateBookDTO } from "../Types";
 
 export const BookService = {
   getAll: async (): Promise<Book[]> => {
