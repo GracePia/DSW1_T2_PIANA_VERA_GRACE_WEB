@@ -4,7 +4,7 @@ import BooksPage from './Pages/BookPage';
 import LoansPage from './Pages/LoanPage';
 
 function App() {
-  
+
   return (
     <Router>
       <Navbar />
